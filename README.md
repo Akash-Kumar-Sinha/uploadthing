@@ -1,3 +1,7 @@
+Create .env file and add api keys to it
+
+VISIT: https://uploadthing.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
