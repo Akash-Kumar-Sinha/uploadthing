@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "types": ["cors"],
+    "target": "es2018",
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "rootDir": "./src",
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "axios": ["node_modules/axios/index.d.ts"],
+      "*": ["./node_modules/*", "./src/types/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.ts"],
+  "exclude": [
+    "node_modules"
+  ]
+}
