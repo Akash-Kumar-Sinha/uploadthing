@@ -13,8 +13,11 @@
       "*": ["./node_modules/*", "./src/types/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.ts"],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "../src/upload/server.ts"
+  ],
+  "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-// core.ts
+// src/core.ts
 import { createUploadthing, type FileRouter } from "uploadthing/express";
  
 const f = createUploadthing();
@@ -9,9 +9,9 @@ export const uploadRouter = {
       maxFileSize: "4MB",
       maxFileCount: 1,
     },
-  }).onUploadComplete(() => {}),
+  }).onUploadComplete(() => {console.log("upload completed")}),
   messageFile: f(["image", "pdf"])
-  .onUploadComplete(() => {}),
+  .onUploadComplete(() => {console.log("upload completed")}),
 } satisfies FileRouter;
  
 export type OurFileRouter = typeof uploadRouter;
