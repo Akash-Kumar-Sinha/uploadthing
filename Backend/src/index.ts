@@ -1,9 +1,11 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { createUploadthingExpressHandler } from "uploadthing/express";
 import { uploadRouter } from "./core";
 import "dotenv/config";
-// import { utapi } from './server';
+import { upload } from './server';
 import cors from 'cors';
+import { createUploadthing } from 'uploadthing/server';
+// import { upload } from './middleware/multer';
 
 const app = express();
 const port = 3001;
@@ -20,6 +22,8 @@ app.get('/', (req, res) => {
   res.send('Hello, Express!');
 });
 
+app.post('/api/uploadthing', upload )
+
 app.use(
   "/api/uploadthing",
   createUploadthingExpressHandler({
@@ -27,17 +31,6 @@ app.use(
   }),
 );
 
-// app.post('/api/uploadthing', async (req, res) => {
-//   try {
-//     const formData = req.body.formData; // Get the form data from the client
-//     console.log("formData",formData);
-//     const uploadResponse = await utapi.uploadFiles(formData);
-//     res.json({ success: true, uploadResponse });
-//   } catch (error) {
-//     console.error('Upload error:', error);
-//     res.status(500).json({ success: false, error: 'Internal Server Error' });
-//   }
-// });
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);

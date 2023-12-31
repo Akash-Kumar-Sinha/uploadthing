@@ -28,7 +28,7 @@ const FileUpload = ({ onChange, value, endpoint }: FileUploadProps) => {
           const renamedFiles = files.map(
             (f) => new File([f], "renamed-" + f.name, { type: f.type })
           );
-          // console.log(renamedFiles);
+          console.log(renamedFiles);
           return renamedFiles;
         }}
         onUploadBegin={(name) => {
